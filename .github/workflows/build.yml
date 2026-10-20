@@ -10,12 +10,15 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
 
       - name: Unpack project.zip
-        run: unzip -q -o project.zip -d src
+        run: |
+          ls -la
+          unzip -q -o project.zip -d src
+          ls -la src
 
       - uses: actions/setup-java@v4
         with:
